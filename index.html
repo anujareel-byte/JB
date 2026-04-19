@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<title>For You 💗</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial;
+  background: linear-gradient(135deg, #ffd6e0, #fef6f9);
+  text-align: center;
+}
+
+.card {
+  background: white;
+  border-radius: 25px;
+  padding: 30px;
+  max-width: 420px;
+  margin: 60px auto;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+h3 { color: #ff6f91; }
+
+button {
+  background: #ff6f91;
+  color: white;
+  border: none;
+  padding: 14px 22px;
+  border-radius: 15px;
+  margin-top: 15px;
+}
+
+.hidden { display: none; }
+
+img {
+  width: 100%;
+  border-radius: 15px;
+  margin-top: 15px;
+}
+
+iframe {
+  width: 100%;
+  height: 220px;
+  border-radius: 15px;
+  margin-top: 15px;
+}
+
+/* ✨ เอฟเฟกต์ชื่อ */
+@keyframes pop {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+.pop {
+  animation: pop 0.6s ease;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+  <!-- 💗 ชื่อ -->
+  <h3 id="coupleName">Jeab 💗 Bam</h3>
+
+  <h2>ที่รักก 🥺</h2>
+
+  <!-- ✨ ข้อความพิมพ์ -->
+  <p id="text"></p>
+
+  <button onclick="startLove()">กดตรงนี้หน่อยนะ 💗</button>
+
+  <div id="secret" class="hidden">
+
+    <p style="font-weight:bold; font-size:18px;">
+      ดูพวกเราสิ 💗
+    </p>
+
+    <!-- 📸 รูป -->
+    <img src="https://wealthy-tomato-8feklr1ygl.edgeone.app/IMG_1867.jpeg">
+
+    <p style="margin-top:15px;">
+      เค้าคิดถึงช่วงเวลานี้มากเลยนะ 🥺
+    </p>
+
+    <!-- 💗 ข้อความก่อนเพลง -->
+    <p style="margin-top:15px; color:#555;">
+      เพลงนี้ให้ที่รักนะคะ 💗
+    </p>
+
+    <!-- 🎬 MV -->
+    <iframe 
+      src="https://drive.google.com/file/d/1nEeAvX2XPSJ6jU82iWPJJboq_UBP7Rab/preview"
+      allow="autoplay">
+    </iframe>
+
+    <!-- 💗 ปิดเกม -->
+    <p style="margin-top:20px; font-size:18px; font-weight:bold;">
+      หายงอนเค้าได้ยัง 💗
+    </p>
+
+    <button onclick="alert('เย้ 💗 เค้าจะดูแลหนูให้ดีกว่านี้นะ')">
+      หายงอนแล้ว 💗
+    </button>
+
+    <br>
+
+    <button onclick="alert('ง้ออีกก็ได้นะ เค้าไม่ไปไหนเลย 💗')">
+      ยังงอนอยู่ 🥺
+    </button>
+
+  </div>
+</div>
+
+<script>
+/* ✨ พิมพ์ทีละตัว */
+const message = "พี่เจี้ยบขอโทษนะ ที่พูดไม่ดีและใช้อารมณ์ 🥺\nเค้าไม่อยากเสียหนูไปเลยจริงๆ\nอยากให้เรายังจับมือกันไว้แบบนี้ 💗";
+
+let i = 0;
+function typeText() {
+  if (i < message.length) {
+    document.getElementById("text").innerHTML += message.charAt(i);
+    i++;
+    setTimeout(typeText, 40);
+  }
+}
+typeText();
+
+/* 💗 กดแล้วโชว์ + ชื่อเด้ง */
+function startLove() {
+  document.getElementById("secret").style.display = "block";
+  document.getElementById("coupleName").classList.add("pop");
+}
+</script>
+
+</body>
+</html>
